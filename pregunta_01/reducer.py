@@ -1,6 +1,3 @@
-#
-# >>> Escriba el codigo del reducer a partir de este punto <<<
-#
 import sys
 
 if __name__ == '__main__':
