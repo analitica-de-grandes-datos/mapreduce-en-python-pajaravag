@@ -1,8 +1,5 @@
-# Oscar es el Llanerazo
-#
 import sys
 if __name__ == "__main__":
-
 
     for line in sys.stdin:
         ch = line.strip()
