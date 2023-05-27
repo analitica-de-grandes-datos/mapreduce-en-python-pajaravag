@@ -13,4 +13,4 @@ if __name__ == "__main__":
     arrangement = sorted(data, key = lambda x: datetime.strptime(x[1], '%Y-%m-%d'))
 
     for item in arrangement:
-        sys.stdout.write('{}\t{}\t{}\n'.format(item[0], item[1], item[2]))
+        sys.stdout.write('{}   {}   {}\n'.format(item[0], item[1], item[2]))
