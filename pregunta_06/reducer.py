@@ -2,29 +2,21 @@ import sys
 
 if __name__ == '__main__':
 
-    curkey = None
-    total = 0
+    min_value, max_value = {}, {}
 
     for line in sys.stdin:
+        key, value = line.strip().split('\t')
+        value = float(value)
 
-        key, val = line.split("\t")
-        val = float(val)
-
-        if key == curkey:
-
-            if val >= total:
-                total = val
-            
-            else:
-                total = total
-
+        if key in max_value:
+            max_value[key] = max(max_value[key], value)
+            min_value[key] = min(min_value[key], value)
+        
         else:
+            max_value[key] = value
+            min_value[key] = value
 
-            if curkey is not None:
-
-                sys.stdout.write("{}\t{}\n".format(curkey, total))
-
-            curkey = key
-            total = val
-
-    sys.stdout.write("{}\t{}\n".format(curkey, total))
+    for key in sorted(max_value.keys()):
+        max_val = max_value[key]
+        min_val = min_value[key]   
+        sys.stdout.write('{}\t{}\t{}\n'.format(key, max_val, min_val))
