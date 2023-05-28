@@ -9,9 +9,9 @@ if __name__ == '__main__':
         row = line.strip()
 
         word, times, count = row.split('\t')
-        count = int(count)
+        count = float(count)
         word = str(word)
-        times = int(times)
+        times = float(times)
 
         if word in word_count:
             word_count[word] += count
@@ -23,4 +23,4 @@ if __name__ == '__main__':
     for word in sorted(word_count):
         counter = word_count[word]
         average_word = word_count[word] / word_times[word]
-        sys.stdout.write("{}   {}   {}\n".format(word, float(counter), average_word))
+        sys.stdout.write("{}   {}   {}\n".format(word, counter, average_word))
