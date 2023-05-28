@@ -23,4 +23,4 @@ if __name__ == '__main__':
     for word in sorted(word_count):
         counter = word_count[word]
         average_word = word_count[word] / word_times[word]
-        sys.stdout.write("{}   {}   {}\n".format(word, counter, average_word))
+        sys.stdout.write("{}\t{}\t{}\n".format(word, counter, average_word))
